@@ -34,6 +34,7 @@
   @keyframes drift1{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(10px,-18px) rotate(10deg)}}
   @keyframes drift2{0%,100%{transform:translate(0,0) rotate(-8deg)}50%{transform:translate(-12px,-14px) rotate(4deg)}}
   @keyframes drift3{0%,100%{transform:translate(0,0) rotate(6deg)}50%{transform:translate(9px,16px) rotate(-8deg)}}
+  @media(max-width:640px){.hdr-nav{display:none!important}}
 </style>
 </helmet>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#14110a"/><g transform="translate(50 50)"><ellipse cx="0" cy="6" rx="26" ry="15" fill="#c99a3f"/><path d="M-24 4 Q0 -14 24 4" fill="none" stroke="#e9dcc4" stroke-width="3" stroke-linecap="round"/><path d="M-14 2 Q0 -8 14 2 M-8 6 Q0 -2 8 6" fill="none" stroke="#8a6a2a" stroke-width="2" stroke-linecap="round"/></g></svg></template>
@@ -53,7 +54,7 @@
   <!-- NAV -->
   <header style="position:sticky;top:0;z-index:50;background:rgba(246,239,225,0.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(42,31,22,0.1)">
     <div style="max-width:1200px;margin:0 auto;padding:14px 24px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px">
-      <nav style="display:flex;align-items:center;gap:26px;font-size:14px;font-weight:500;justify-self:start">
+      <nav class="hdr-nav" style="display:flex;align-items:center;gap:26px;font-size:14px;font-weight:500;justify-self:start">
         <a href="#izdvajamo" style="opacity:0.85" style-hover="opacity:1">Ponuda</a>
         <a href="#prica" style="opacity:0.85" style-hover="opacity:1">Naša priča</a>
       </nav>
@@ -62,7 +63,7 @@
         <img src="images/logo.jpg" alt="Pekara Stankovic" style="width:44px;height:44px;border-radius:50%;object-fit:cover;background:#000"/>
         <span style="font-family:'Gloock',serif;font-size:21px;letter-spacing:0.02em">Stanković</span>
       </a>
-      <nav style="display:flex;align-items:center;gap:26px;font-size:14px;font-weight:500;justify-self:end">
+      <nav class="hdr-nav" style="display:flex;align-items:center;gap:26px;font-size:14px;font-weight:500;justify-self:end">
         <a href="#pitanja" style="opacity:0.85" style-hover="opacity:1">Pitanja</a>
         <a href="#kontakt" style="background:#14110a;color:#f6efe1;padding:9px 17px;border-radius:999px;font-weight:600" style-hover="background:oklch(0.66 0.11 78);color:#14110a">Kontakt</a>
       </nav>
