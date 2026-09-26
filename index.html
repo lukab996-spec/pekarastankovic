@@ -38,7 +38,7 @@
 </style>
 </helmet>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#14110a"/><g transform="translate(50 50)"><ellipse cx="0" cy="6" rx="26" ry="15" fill="#c99a3f"/><path d="M-24 4 Q0 -14 24 4" fill="none" stroke="#e9dcc4" stroke-width="3" stroke-linecap="round"/><path d="M-14 2 Q0 -8 14 2 M-8 6 Q0 -2 8 6" fill="none" stroke="#8a6a2a" stroke-width="2" stroke-linecap="round"/></g></svg></template>
-<div style="max-width:100%;overflow-x:hidden">
+<div style="max-width:100%;overflow-x:clip">
 
   <!-- TOP BAR -->
   <div style="background:#14110a;color:#e9dcc4;font-size:13px">
@@ -291,6 +291,10 @@
     </div>
   </footer>
 
+  <a href="#top" title="Nazad na vrh" style="{{ topBtnStyle }}" style-hover="{{ topBtnHover }}">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </a>
+
   <sc-if value="{{ lightbox }}" hint-placeholder-val="{{ false }}">
     <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;z-index:100;background:rgba(20,17,10,0.9);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out">
       <img src="{{ lightbox }}" alt="" style="max-width:min(92vw,900px);max-height:88vh;object-fit:contain;border-radius:14px;box-shadow:0 24px 70px rgba(0,0,0,0.55)"/>
@@ -362,10 +366,25 @@ class Component extends DCLogic {
       item(KI, '84%', '40%', 96, 48, 'drift3', 22, 0.5),
     ];
     const heroScale = 1 + Math.min(this.state.heroY, 500) / 500 * 0.14;
+    const showTop = this.state.heroY > 400;
+    const topBtnStyle = {
+      position: 'fixed', right: '22px', bottom: '22px', zIndex: 60,
+      width: '46px', height: '46px', borderRadius: '50%',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      background: '#14110a', color: '#e9dcc4',
+      boxShadow: '0 6px 20px rgba(20,17,10,0.32)',
+      border: '1px solid rgba(201,154,63,0.5)',
+      opacity: showTop ? 1 : 0,
+      transform: showTop ? 'translateY(0)' : 'translateY(12px)',
+      pointerEvents: showTop ? 'auto' : 'none',
+      transition: 'opacity 0.25s ease, transform 0.25s ease, background 0.2s ease',
+    };
+    const topBtnHover = { background: '#c99a3f', color: '#14110a' };
     const heroImgStyle = { width: '100%', height: '100%', objectFit: 'cover', display: 'block', transform: `scale(${heroScale})`, transformOrigin: 'center', transition: 'transform 0.12s linear' };
     return {
       mlinRef: (el) => { this._mlin = el; },
       heroImgStyle,
+      topBtnStyle, topBtnHover,
       decor,
       loaves, beltStyle, progressBar, mlinTitle,
       blurbs: [
