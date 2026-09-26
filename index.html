@@ -134,31 +134,10 @@
     </div>
   </section>
 
-  <!-- PONOSNO IZDVAJAMO -->
-  <section id="izdvajamo" style="background:#efe5d1;padding:clamp(56px,8vw,100px) 0;position:relative;overflow:hidden">
-    <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0"><sc-for list="{{ decor }}" as="d" hint-placeholder-count="6"><div style="{{ d.wrap }}"><div style="{{ d.inner }}"><img src="{{ d.src }}" alt="" style="width:100%;height:100%;object-fit:contain;display:block"/></div></div></sc-for></div>
-    <div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 24px">
-      <div style="text-align:center;margin-bottom:clamp(32px,4vw,52px)">
-        <span style="font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:oklch(0.66 0.11 78);font-weight:700">Ponosno izdvajamo</span>
-        <h2 style="font-family:'Gloock',serif;font-size:clamp(32px,4.5vw,52px);font-weight:400;margin-top:10px">Iz naše peći</h2>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:16px">
-        <sc-for list="{{ featured }}" as="f" hint-placeholder-count="4">
-          <figure style="background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(42,31,22,0.06)">
-            <div style="aspect-ratio:1/1;overflow:hidden">
-              <img src="{{ f.img }}" alt="{{ f.name }}" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.35s" style-hover="transform:scale(1.06)"/>
-            </div>
-            <figcaption style="padding:16px;text-align:center;font-family:'Gloock',serif;font-size:18px">{{ f.name }}</figcaption>
-          </figure>
-        </sc-for>
-      </div>
-    </div>
-  </section>
-
   <!-- PRICA -->
   <section id="prica" style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,100px) 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(32px,5vw,64px);align-items:center">
     <div style="aspect-ratio:1/1;border-radius:18px;overflow:hidden">
-      <img src="images/prica-pec.jpg" alt="Peć iz koje izlazi vruć hleb" style="width:100%;height:100%;object-fit:cover;display:block"/>
+      <img src="images/prica-pec2.jpg" alt="Peć iz koje izlazi vruć hleb" style="width:100%;height:100%;object-fit:cover;display:block"/>
     </div>
     <div>
       <span style="font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:oklch(0.66 0.11 78);font-weight:700">Da li ste znali?</span>
@@ -183,18 +162,42 @@
     </div>
   </section>
 
-  <!-- GALERIJA -->
+  <!-- PRIDRUŽI SE TIMU -->
   <section style="max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,100px) 24px">
     <div style="text-align:center;margin-bottom:clamp(28px,4vw,44px)">
-      <span style="font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:oklch(0.66 0.11 78);font-weight:700">Galerija</span>
-      <h2 style="font-family:'Gloock',serif;font-size:clamp(32px,4.5vw,52px);font-weight:400;margin-top:10px">Iz naše pekare</h2>
+      <span style="font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:oklch(0.66 0.11 78);font-weight:700">Zapošljavamo</span>
+      <h2 style="font-family:'Gloock',serif;font-size:clamp(32px,4.5vw,52px);font-weight:400;margin-top:10px">Pridruži se timu</h2>
+      <p style="max-width:52ch;margin:14px auto 0;font-size:16px;line-height:1.6;opacity:0.82">Rastemo i tražimo vredne ljude koji vole miris svežeg peciva. Ako želiš da budeš deo naše pekare, javi se.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px">
-      <sc-for list="{{ galleryItems }}" as="g" hint-placeholder-count="5">
-        <div onClick="{{ g.open }}" style="aspect-ratio:1/1;border-radius:12px;overflow:hidden;cursor:pointer">
-          <img src="{{ g.src }}" alt="Iz naše pekare" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.35s" style-hover="transform:scale(1.06)"/>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px">
+      <sc-for list="{{ jobs }}" as="j" hint-placeholder-count="2">
+        <div style="border:1px solid rgba(42,31,22,0.14);border-radius:16px;padding:28px 26px;background:rgba(255,255,255,0.5)">
+          <span style="font-size:26px;color:oklch(0.66 0.11 78)">◆</span>
+          <h3 style="font-family:'Gloock',serif;font-size:23px;font-weight:400;margin:12px 0 8px">{{ j.title }}</h3>
+          <p style="font-size:15px;line-height:1.6;opacity:0.82">{{ j.text }}</p>
         </div>
       </sc-for>
+    </div>
+    <div style="text-align:center;margin-top:clamp(28px,4vw,40px)">
+      <a href="tel:0611016420" style="display:inline-flex;align-items:center;gap:10px;background:#14110a;color:#e9dcc4;padding:15px 30px;border-radius:999px;font-weight:600;font-size:15px" style-hover="background:#c99a3f;color:#14110a">Pozovi nas · 061 1016420</a>
+    </div>
+  </section>
+
+  <!-- GALERIJA -->
+  <section style="background:#efe5d1;padding:clamp(56px,8vw,100px) 0;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0"><sc-for list="{{ decor }}" as="d" hint-placeholder-count="6"><div style="{{ d.wrap }}"><div style="{{ d.inner }}"><img src="{{ d.src }}" alt="" style="width:100%;height:100%;object-fit:contain;display:block"/></div></div></sc-for></div>
+    <div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 24px">
+      <div style="text-align:center;margin-bottom:clamp(28px,4vw,44px)">
+        <span style="font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:oklch(0.66 0.11 78);font-weight:700">Galerija</span>
+        <h2 style="font-family:'Gloock',serif;font-size:clamp(32px,4.5vw,52px);font-weight:400;margin-top:10px">Iz naše pekare</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px">
+        <sc-for list="{{ galleryItems }}" as="g" hint-placeholder-count="5">
+          <div onClick="{{ g.open }}" style="aspect-ratio:1/1;border-radius:12px;overflow:hidden;cursor:pointer">
+            <img src="{{ g.src }}" alt="Iz naše pekare" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.35s" style-hover="transform:scale(1.06)"/>
+          </div>
+        </sc-for>
+      </div>
     </div>
   </section>
 
@@ -365,7 +368,7 @@ class Component extends DCLogic {
       item(KI, '19%', '83%', 104, 22, 'drift3', 24, 1),
       item(KR, '67%', '85%', 128, -32, 'drift2', 35, 3),
       item(VE, '44%', '47%', 84, 0, 'drift1', 29, 1.5),
-      item(KI, '84%', '40%', 96, 48, 'drift3', 22, 0.5),
+      item(KI, '72%', '40%', 96, 48, 'drift3', 22, 0.5),
     ];
     const heroScale = 1 + Math.min(this.state.heroY, 500) / 500 * 0.14;
     const showTop = this.state.heroY > 400;
@@ -410,6 +413,11 @@ class Component extends DCLogic {
         { num: '5+', label: 'godina od kad spremamo za vas' },
         { num: '10000+', label: 'zadovoljnih mušterija' },
         { num: '06h', label: 'sveže već od ranog jutra' },
+      ],
+      jobs: [
+        { title: 'Pekar', text: 'Iskustvo je poželjno, ali učimo i one koji tek počinju. Rad u smenama, prijatna atmosfera.' },
+        { title: 'Prodavac', text: 'Ljubaznost i osmeh na prvom mestu. Rad za kasom i posluživanje mušterija u našim objektima.' },
+        { title: 'Pomoćni radnik', text: 'Priprema, pakovanje i održavanje. Idealno za marljive ljude spremne da uče zanat.' },
       ],
       galleryItems: ['images/gal-burek.jpg', 'images/gal-hleb.jpg', 'images/gal-pogacice.jpg', 'images/gal-pica.jpg', 'images/gal-somun.jpg'].map((src) => ({ src, open: () => this.setState({ lightbox: src }) })),
       lightbox: this.state.lightbox,
